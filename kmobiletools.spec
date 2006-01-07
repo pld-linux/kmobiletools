@@ -9,6 +9,7 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}.tar.gz
 Patch0:		%{name}-speed.patch
 URL:		http://kmobiletools.berlios.de/
 BuildRequires:	kdelibs-devel
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
