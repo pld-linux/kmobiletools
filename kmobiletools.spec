@@ -6,6 +6,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}.tar.gz
 # Source0-md5:	f4be9605142e518ebb61a3f31fc846a5
+Patch0:		%{name}-speed.patch
 URL:		http://kmobiletools.berlios.de/
 BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -15,6 +16,7 @@ Make your mobile phone communicate with your PC.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
