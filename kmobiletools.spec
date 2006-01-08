@@ -1,4 +1,5 @@
 Summary:	Make your mobile phone communicate with your PC
+Summary(pl):	Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.4.3.1
 Release:	1
@@ -14,6 +15,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Make your mobile phone communicate with your PC.
+
+%description -l pl
+Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC.
 
 %prep
 %setup -q
