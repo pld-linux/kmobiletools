@@ -8,7 +8,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}.tar.bz2
 # Source0-md5:	73fcc767e3f44ab4e4beda30c2c1de81
-URL:		http://kmobiletools.berlios.de/
+URL:		http://www.kmobiletools.org/
 BuildRequires:	kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
