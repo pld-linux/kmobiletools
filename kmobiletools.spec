@@ -60,7 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kmobiletools
 %attr(755,root,root) %{_bindir}/kbluetoothpairingwizard
 %attr(755,root,root) %{_bindir}/kmtsetup
-%{_includedir}/kmobiletools/*.h
 %{_libdir}/kde3/libkmobiletoolsdevicepart.la
 %attr(755,root,root) %{_libdir}/kde3/libkmobiletoolsdevicepart.so
 %{_libdir}/kde3/libkmobiletoolsmainpart.la
@@ -69,11 +68,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkmobiletools.so
 %{_libdir}/libkmobiletools_at.la
 %attr(755,root,root) %{_libdir}/libkmobiletools_at.so
-%{_datadir}/apps/kbluetoothpairingwizard/kbluetoothpairingwizardui.rc
-%{_datadir}/apps/kbluetoothpairingwizard/kmobilebtwizard.png
-%{_datadir}/apps/kmtsetup/kmobilewizard.png
-%{_datadir}/apps/kmtsetup/kmtsetupui.rc
-%{_datadir}/services/kmobiletools_mainpart.desktop
+%{_datadir}/apps/kbluetoothpairingwizard
+%{_datadir}/apps/kmtsetup
 %{_datadir}/apps/%{name}
+%{_datadir}/services/kmobiletools_mainpart.desktop
 %{_iconsdir}/*/*/*/*.png
 %{_desktopdir}/kde/*.desktop
+
+# -devel (if needed)
+#%{_includedir}/kmobiletools
