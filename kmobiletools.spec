@@ -32,7 +32,7 @@ Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC.
 
 %build
 %configure \
-	--%{!?debug:dis}%{?debug:en}able-debug \
+	--%{!?with_debug:dis}%{?with_debug:en}able-debug \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
 %{__make}
