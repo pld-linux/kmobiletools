@@ -1,14 +1,17 @@
+%bcond_with	debug	# enable debug
+
 %define		_beta _beta1
 Summary:	Make your mobile phone communicate with your PC
 Summary(de):	Lässt dein Handy mit dem PC kommunizieren
 Summary(pl):	Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.5
-Release:	0.%{_beta}.1
+Release:	0.%{_beta}.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}%{_beta}.tar.bz2
 # Source0-md5:	f612c6e0e3007eb9a7fe318a4d17a297
+Patch0:		%{name}-desktop.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
@@ -25,6 +28,7 @@ Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC.
 
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
+%patch0 -p0
 
 %build
 %configure \
