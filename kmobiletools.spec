@@ -77,3 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 
 # -devel (if needed)
 #%{_includedir}/kmobiletools
+
+#-kontact (to be done)
+%attr(755,root,root) %{_libdir}/kde3/libkontact_kmobiletools.so
+%{_libdir}/kde3/libkontact_kmobiletools.la
+%{_datadir}/services/kontact/kmobiletools.desktop
