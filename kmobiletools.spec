@@ -14,6 +14,7 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}%{_beta}.tar.
 Patch0:		%{name}-desktop.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	kdelibs-devel
+BuildRequires:	kdepim-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,6 +34,7 @@ Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC.
 %build
 %configure \
 	--%{!?with_debug:dis}%{?with_debug:en}able-debug \
+	--enable-kontact-plugin \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
 %{__make}
