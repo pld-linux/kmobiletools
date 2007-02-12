@@ -2,8 +2,8 @@
 
 %define		_beta _beta1
 Summary:	Make your mobile phone communicate with your PC
-Summary(de):	Lässt dein Handy mit dem PC kommunizieren
-Summary(pl):	Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC
+Summary(de.UTF-8):   LÃ¤sst dein Handy mit dem PC kommunizieren
+Summary(pl.UTF-8):   NarzÄ™dzie do komunikacji miÄ™dzy telefonem komÃ³rkowym a PC
 Name:		kmobiletools
 Version:	0.5
 Release:	0.%{_beta}.2
@@ -21,11 +21,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Make your mobile phone communicate with your PC.
 
-%description -l de
-Lässt dein Handy mit dem PC kommunizieren.
+%description -l de.UTF-8
+LÃ¤sst dein Handy mit dem PC kommunizieren.
 
-%description -l pl
-Narzêdzie do komunikacji miêdzy telefonem komórkowym a PC.
+%description -l pl.UTF-8
+NarzÄ™dzie do komunikacji miÄ™dzy telefonem komÃ³rkowym a PC.
 
 %prep
 %setup -q -n %{name}-%{version}%{_beta}
