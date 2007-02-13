@@ -2,8 +2,8 @@
 
 %define		_beta _beta1
 Summary:	Make your mobile phone communicate with your PC
-Summary(de.UTF-8):   Lässt dein Handy mit dem PC kommunizieren
-Summary(pl.UTF-8):   Narzędzie do komunikacji między telefonem komórkowym a PC
+Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
+Summary(pl.UTF-8):	Narzędzie do komunikacji między telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.5
 Release:	0.%{_beta}.2
