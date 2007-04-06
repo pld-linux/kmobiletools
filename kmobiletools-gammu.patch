@@ -1,0 +1,11 @@
+--- configure.in.in	2007-04-06 20:24:51.000000000 +0200
++++ configure.in.in-new	2007-04-06 23:52:02.069609665 +0200
+@@ -36,7 +36,7 @@
+ 
+ AC_ARG_WITH(gammu, AC_HELP_STRING([--without-gammu], [Build kmobiletools without gammu engine (default: check)]),
+ 	[with_gammu=$withval], [with_gammu=yes])
+-if test "$with_gammu" = "yes" && false ; then # gammu forced to disabled till it'll be completed
++if test "$with_gammu" = "yes"; then # gammu forced to disabled till it'll be completed
+ 	KDE_CHECK_HEADER(gammu/gammu.h, [have_gammu="yes"], [have_gammu="no"])
+ 	if test "$have_gammu" = "yes"; then
+ 		AC_DEFINE(WITH_GAMMU, 1, [with GAMMU])
