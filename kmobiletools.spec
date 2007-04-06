@@ -1,7 +1,8 @@
-
+#
+# Conditional build:
 %bcond_without	kdebluetooth	# don't build kdebluetooth integration
 %bcond_without	obexftp		# don't build FileSystem integration
-
+#
 %define		_beta beta2
 
 Summary:	Make your mobile phone communicate with your PC
