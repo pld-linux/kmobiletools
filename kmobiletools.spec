@@ -19,7 +19,8 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar
 # Source0-md5:	b7f193f8fff0a92008dd536f9facc383
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
-Patch2:		%{name}-gammu.patch
+Patch2:		%{name}-configure_in_in.patch
+Patch3:		%{name}-gammu.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -44,8 +45,9 @@ Narzędzie do komunikacji między telefonem komórkowym a PC.
 %setup -q -n %{name}-%{version}-%{_beta}
 %patch0 -p0
 %patch1 -p1
-%if %{with gammu}
 %patch2 -p0
+%if %{with gammu}
+%patch3 -p0
 %endif
 
 %build
@@ -56,6 +58,7 @@ Narzędzie do komunikacji między telefonem komórkowym a PC.
 %endif
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
 	--%{?with_gammu:en}%{!?with_gammu:dis}able-gammu \
+	--with%{!?with_obexftp:out}-obexftp \
 	--enable-kontact-plugin \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
@@ -91,6 +94,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkmobiletools.so
 %{_libdir}/libkmobiletools_at.la
 %attr(755,root,root) %{_libdir}/libkmobiletools_at.so
+
+%if %{with obexftp}
+%{_libdir}/kde3/kio_mobile.la
+%attr(755,root,root) %{_libdir}/kde3/kio_mobile.so
+%{_libdir}/kde3/kio_obex2.la
+%attr(755,root,root) %{_libdir}/kde3/kio_obex2.so
+%{_datadir}/services/mobile.protocol
+%{_datadir}/services/obex2.protocol
+%{_datadir}/apps/systemview/mobile.desktop
+%endif
+
 %{_datadir}/apps/kbluetoothpairingwizard
 %{_datadir}/apps/kmtsetup
 %{_datadir}/apps/%{name}
