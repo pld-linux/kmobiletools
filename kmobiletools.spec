@@ -1,4 +1,7 @@
 
+%bcond_without	kdebluetooth	# don't build kdebluetooth integration
+%bcond_without	obexftp		# don't build FileSystem integration
+
 %define		_beta beta2
 
 Summary:	Make your mobile phone communicate with your PC
@@ -14,9 +17,10 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
 URL:		http://www.kmobiletools.org/
-BuildRequires:	kdebluetooth-devel
+%{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
+%{?with_obexftp:BuildRequires:	obexftp-devel}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
