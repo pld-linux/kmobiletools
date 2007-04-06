@@ -2,6 +2,8 @@
 # Conditional build:
 %bcond_without	kdebluetooth	# don't build kdebluetooth integration
 %bcond_without	obexftp		# don't build FileSystem integration
+%bcond_with	gammu		# build gammu integration
+
 #
 %define		_beta beta2
 
@@ -17,9 +19,11 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar
 # Source0-md5:	b7f193f8fff0a92008dd536f9facc383
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
+Patch2:		%{name}-gammu.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+%{?with_gammu:BuildRequires:	gammu-devel}
 %{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
@@ -40,6 +44,9 @@ Narzędzie do komunikacji między telefonem komórkowym a PC.
 %setup -q -n %{name}-%{version}-%{_beta}
 %patch0 -p0
 %patch1 -p1
+%if %{with gammu}
+%patch2 -p0
+%endif
 
 %build
 %{__make} -f admin/Makefile.common cvs
@@ -48,6 +55,7 @@ Narzędzie do komunikacji między telefonem komórkowym a PC.
 	--enable-libsuffix=64 \
 %endif
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
+	--%{?with_gammu:en}%{!?with_gammu:dis}able-gammu \
 	--enable-kontact-plugin \
 	--disable-rpath \
 	--with-qt-libraries=%{_libdir}
