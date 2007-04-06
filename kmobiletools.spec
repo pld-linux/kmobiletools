@@ -17,6 +17,8 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
 URL:		http://www.kmobiletools.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 %{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
