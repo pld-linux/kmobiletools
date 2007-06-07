@@ -2,10 +2,10 @@
 # Conditional build:
 %bcond_without	kdebluetooth	# don't build kdebluetooth integration
 %bcond_without	obexftp		# don't build FileSystem integration
-%bcond_with	gammu		# build gammu integration
+%bcond_without	gammu		# build gammu integration
 
 #
-%define		_beta beta2
+%define		_beta beta3
 
 Summary:	Make your mobile phone communicate with your PC
 Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
@@ -16,11 +16,10 @@ Release:	0.%{_beta}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar.bz2
-# Source0-md5:	b7f193f8fff0a92008dd536f9facc383
+# Source0-md5:	2880ca9b21ba4f70088be64b6ef6a39b
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
 Patch2:		%{name}-configure_in_in.patch
-Patch3:		%{name}-gammu.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -46,9 +45,6 @@ Narzędzie do komunikacji między telefonem komórkowym a PC.
 %patch0 -p0
 %patch1 -p1
 %patch2 -p0
-%if %{with gammu}
-%patch3 -p0
-%endif
 
 %build
 %{__make} -f admin/Makefile.common cvs
