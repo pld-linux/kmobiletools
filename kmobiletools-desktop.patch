@@ -1,20 +1,20 @@
---- kmobiletools/kmobiletools.desktop	2007-04-06 20:24:49.000000000 +0200
-+++ kmobiletools/kmobiletools.desktop-new	2007-04-06 22:44:31.472903919 +0200
+--- kmobiletools/kmobiletools/kmobiletools.desktop	2007-04-06 20:24:49.000000000 +0200
++++ kmobiletools/kmobiletools/kmobiletools.desktop-new	2007-04-06 22:44:31.472903919 +0200
 @@ -42,4 +42,4 @@
  Comment[sk]=KDE Mobilné telefóny
  Comment[sv]=KDE:s mobiltelefonsvit
  Terminal=false
 -Categories=Qt;KDE;Utility;X-KDE-Utilities-Peripherals;
 +Categories=Qt;KDE;Network;
---- kbluetoothpairingwizard/kbluetoothpairingwizard.desktop	2007-04-06 20:24:51.000000000 +0200
-+++ kbluetoothpairingwizard/kbluetoothpairingwizard.desktop-new	2007-04-06 22:45:33.340948869 +0200
+--- kmobiletools/kbluetoothpairingwizard/kbluetoothpairingwizard.desktop	2007-04-06 20:24:51.000000000 +0200
++++ kmobiletools/kbluetoothpairingwizard/kbluetoothpairingwizard.desktop-new	2007-04-06 22:45:33.340948869 +0200
 @@ -24,3 +24,4 @@
  Comment[pt]=Uma aplicação simples do KDE
  Comment[pt_BR]=Um Aplicativo simples do KDE
  Comment[sv]=Ett enkelt KDE-program
 +Categories=Qt;KDE;Network;
---- kmtsetup/kmtsetup.desktop	2007-04-06 20:24:51.000000000 +0200
-+++ kmtsetup/kmtsetup.desktop-new	2007-04-06 22:46:08.840295951 +0200
+--- kmobiletools/kmtsetup/kmtsetup.desktop	2007-04-06 20:24:51.000000000 +0200
++++ kmobiletools/kmtsetup/kmtsetup.desktop-new	2007-04-06 22:46:08.840295951 +0200
 @@ -25,3 +25,4 @@
  Comment[pt]=Uma aplicação de configuração dos dispositivos usados pelo KMobiletools
  Comment[pt_BR]=Um aplicativo para configuração dos dispositivos usados pelo KMobiletools
