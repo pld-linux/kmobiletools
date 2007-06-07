@@ -1,22 +1,22 @@
---- configure.in.in.orig	2007-04-06 20:24:51.000000000 +0200
-+++ configure.in.in	2007-04-07 00:42:52.379942231 +0200
-@@ -65,18 +65,22 @@
- 
- KDE_CHECK_HEADER(p2kmoto.h, have_p2k=yes, have_p2k=no)
- AM_CONDITIONAL(with_p2kmoto, test $have_p2k = yes)
--KDE_CHECK_HEADER(obexftp/client.h, have_obexftp=yes, have_obexftp=no)
--AM_CONDITIONAL(compile_obex, test $have_obexftp = yes)
- 
- if test "x$have_p2k" = "xyes"; then
- 	AC_DEFINE(HAVE_P2KLIB, 1, [p2k filesystem support])
+--- kmobiletools/configure.in.in.orig	2007-06-05 16:18:07.000000000 +0200
++++ kmobiletools/configure.in.in	2007-06-07 13:26:03.925827098 +0200
+@@ -78,8 +78,6 @@
+ if test "x$enable_kioslaves" = "xyes"; then
+ 	KDE_CHECK_HEADER(p2kmoto.h, have_p2k=yes, have_p2k=no)
+ 	AM_CONDITIONAL(with_p2kmoto, test $have_p2k = yes)
+-	KDE_CHECK_HEADER(obexftp/client.h, have_obexftp=yes, have_obexftp=no)
+-	AM_CONDITIONAL(compile_obex, test $have_obexftp = yes)
+ else
+ 	AM_CONDITIONAL(with_p2kmoto, false)
+ 	AM_CONDITIONAL(compile_obex, false)
+@@ -90,10 +88,15 @@
  	AC_SUBST(HAVE_P2KLIB)
  fi
  
 -if test "x$have_obexftp" = "xyes"; then
 -	AC_DEFINE(HAVE_OBEXFTP, 1, [ObexFTP filesystem support])
 -	AC_SUBST(HAVE_OBEXFTP)
-+AC_ARG_WITH(obexftp, AC_HELP_STRING([--without-obexftp], [Build kmobiletools without filesystem integration (default: check)]),
-+        [with_obexftp=$withval], [with_obexftp=yes])
++AC_ARG_WITH(obexftp, AC_HELP_STRING([--without-obexftp], [Build kmobiletools without filesystem integration (default: check)]), [with_obexftp=$withval], [with_obexftp=yes])
 +if test "$with_obexftp" = "yes"; then
 +	KDE_CHECK_HEADER(obexftp/client.h, have_obexftp=yes, have_obexftp=no)
 +	if test "$have_obexftp" = "yes"; then
@@ -26,5 +26,5 @@
  fi
 +AM_CONDITIONAL(compile_obex, test $have_obexftp = yes)
  
- # AC_ARG_ENABLE(kioslaves, AC_HELP_STRING([--enable-kioslaves], [enable KIOSlaves for filesystem access (default: disable)]),
- #     [enable_kioslaves=$enableval], [enable_kioslaves=no])
+ if test "x$have_p2k" = "xyes" || test "x$have_obexftp" = "xyes"; then
+     ENABLE_KIOSLAVES="yes";
