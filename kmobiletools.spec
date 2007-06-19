@@ -12,7 +12,7 @@ Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
 Summary(pl.UTF-8):	Narzędzie do komunikacji między telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.5.0
-Release:	0.%{_beta}.1
+Release:	0.%{_beta}.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{_beta}.tar.bz2
@@ -39,6 +39,19 @@ Lässt dein Handy mit dem PC kommunizieren.
 
 %description -l pl.UTF-8
 Narzędzie do komunikacji między telefonem komórkowym a PC.
+
+%package devel
+Summary:        Header files and develpment documentation for kmobiletools
+Summary(es.UTF-8):      Arquivos de cabeçalho e bibliotecas de desenvolvimento para kmobiletools
+Summary(pl.UTF-8):      Pliki nagłówkowe i dokumetacja do kmobiletools
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para a kmobiletools
+Summary(ru.UTF-8):      Хедеры и библиотеки програмиста для kmobiletools
+Summary(uk.UTF-8):      Хедери та бібліотеки програміста для kmobiletools
+Group:          Development/Libraries
+Requires:       %{name} = %{version}-%{release}
+
+%description devel
+Header files and develpment documentation for kmobiletools.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_beta}
@@ -68,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 	shelldesktopdir=%{_desktopdir}/kde \
 	kde_htmldir=%{_kdedocdir}
 
-%find_lang %{name}
+%find_lang %{name} --all-name --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -105,13 +118,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kmtsetup
 %{_datadir}/apps/%{name}
 %{_datadir}/services/kmobiletools_mainpart.desktop
+%{_datadir}/services/at_engine.desktop
+%{_datadir}/servicetypes/kmobiletoolsengine.desktop
+
 %{_iconsdir}/*/*/*/*.png
 %{_desktopdir}/kde/*.desktop
-
-# -devel (if needed)
-#%{_includedir}/kmobiletools
 
 #-kontact (to be done)
 %attr(755,root,root) %{_libdir}/kde3/libkontact_kmobiletools.so
 %{_libdir}/kde3/libkontact_kmobiletools.la
 %{_datadir}/services/kontact/kmobiletools.desktop
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/kmobiletools
