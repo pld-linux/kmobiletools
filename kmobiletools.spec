@@ -3,18 +3,19 @@
 %bcond_without	kdebluetooth	# don't build kdebluetooth integration
 %bcond_without	obexftp		# don't build FileSystem integration
 %bcond_without	gammu		# build gammu integration
-#
-%define		bver beta3
+
+%define		subver	beta3
+%define		rel		4
 
 Summary:	Make your mobile phone communicate with your PC
 Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
 Summary(pl.UTF-8):	Narzędzie do komunikacji między telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.5.0
-Release:	0.%{bver}.3
+Release:	0.%{subver}%{rel}
 License:	GPL
 Group:		X11/Applications
-Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{bver}.tar.bz2
+Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{subver}.tar.bz2
 # Source0-md5:	2880ca9b21ba4f70088be64b6ef6a39b
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
@@ -40,14 +41,14 @@ Lässt dein Handy mit dem PC kommunizieren.
 Narzędzie do komunikacji między telefonem komórkowym a PC.
 
 %package devel
-Summary:        Header files for kmobiletools
-Summary(es.UTF-8):      Arquivos de cabeçalho para kmobiletools
-Summary(pl.UTF-8):      Pliki nagłówkowe do kmobiletools
-Summary(pt_BR.UTF-8):   Arquivos de inclusão para a kmobiletools
-Summary(ru.UTF-8):      Хедеры для kmobiletools
-Summary(uk.UTF-8):      Хедери для kmobiletools
-Group:          Development/Libraries
-Requires:       %{name} = %{version}-%{release}
+Summary:	Header files for kmobiletools
+Summary(es.UTF-8):	Arquivos de cabeçalho para kmobiletools
+Summary(pl.UTF-8):	Pliki nagłówkowe do kmobiletools
+Summary(pt_BR.UTF-8):	Arquivos de inclusão para a kmobiletools
+Summary(ru.UTF-8):	Хедеры для kmobiletools
+Summary(uk.UTF-8):	Хедери для kmobiletools
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for kmobiletools.
@@ -56,7 +57,7 @@ Header files for kmobiletools.
 Pliki nagłówkowe do kmobiletools.
 
 %prep
-%setup -q -n %{name}-%{version}-%{bver}
+%setup -q -n %{name}-%{version}-%{subver}
 %patch0 -p0
 %patch1 -p1
 %patch2 -p0
