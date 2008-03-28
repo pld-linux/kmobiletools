@@ -69,7 +69,7 @@ Pliki nagłówkowe do kmobiletools.
 	--enable-libsuffix=64 \
 %endif
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
-	--%{?with_gammu:en}%{!?with_gammu:dis}able-gammu \
+	--with%{!?with_gammu:out}-gammu \
 	--with%{!?with_obexftp:out}-obexftp \
 	--enable-kontact-plugin \
 	--disable-rpath \
