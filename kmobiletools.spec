@@ -20,7 +20,7 @@ Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{subver}.ta
 Patch0:		%{name}-desktop.patch
 Patch1:		kde-ac260-lt.patch
 Patch2:		%{name}-configure_in_in.patch
-Patch2:		%{name}-device_data.patch
+Patch3:		%{name}-device_data.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
