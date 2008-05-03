@@ -25,7 +25,7 @@ URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{?with_gammu:BuildRequires:	gammu-devel >= 1.10.5}
-%{?with_gammu:BuildRequires:	gammu-devel < 1.12}
+%{?with_gammu:BuildRequires:	gammu-devel < 1:1.12.0}
 %{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
