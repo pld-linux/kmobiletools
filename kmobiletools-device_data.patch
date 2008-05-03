@@ -1,0 +1,12 @@
+diff -Nru kmobiletools-0.5.0-beta3/kmobiletools/kmobiletools/engines/gammu_engine/device.cpp kmobiletools-0.5.0-beta3-shl/kmobiletools/kmobiletools/engines/gammu_engine/device.cpp
+--- kmobiletools-0.5.0-beta3/kmobiletools/kmobiletools/engines/gammu_engine/device.cpp	2007-06-05 16:18:07.000000000 +0200
++++ kmobiletools-0.5.0-beta3-shl/kmobiletools/kmobiletools/engines/gammu_engine/device.cpp	2007-06-14 17:18:55.000000000 +0200
+@@ -572,7 +572,7 @@
+     GSM_CallShowNumber showNumber = GSM_CALL_DefaultNumberPresence;
+ 
+     m_mutex.lock();
+-    m_error = m_phoneFunctions->DialVoice( &m_stateMachine, (char*) number.data(),
++    m_error = m_phoneFunctions->DialVoice( &m_stateMachine, (number.utf8().data() ),
+                                            showNumber );
+     if( m_error != ERR_NONE ) {
+         printErrorMessage( m_error, "dial" );
