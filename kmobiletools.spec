@@ -23,7 +23,8 @@ Patch2:		%{name}-configure_in_in.patch
 URL:		http://www.kmobiletools.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-%{?with_gammu:BuildRequires:	gammu-devel}
+%{?with_gammu:BuildRequires:	gammu-devel >= 0.10.5}
+%{?with_gammu:BuildRequires:	gammu-devel < 0.12}
 %{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
