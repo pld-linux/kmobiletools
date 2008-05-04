@@ -12,7 +12,7 @@ Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
 Summary(pl.UTF-8):	Narzędzie do komunikacji między telefonem komórkowym a PC
 Name:		kmobiletools
 Version:	0.5.0
-Release:	0.%{subver}%{rel}
+Release:	0.%{subver}.%{rel}
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kmobiletools/%{name}-%{version}-%{subver}.tar.bz2
