@@ -5,7 +5,7 @@
 %bcond_without	gammu		# build gammu integration
 
 %define		subver	beta3
-%define		rel		4
+%define		rel		5
 
 Summary:	Make your mobile phone communicate with your PC
 Summary(de.UTF-8):	Lässt dein Handy mit dem PC kommunizieren
