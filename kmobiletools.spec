@@ -110,6 +110,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkmobiletools_at.la
 %attr(755,root,root) %{_libdir}/libkmobiletools_at.so
 
+%if %{with gammu}
+%{_libdir}/libkmobiletools_gammu.la
+%attr(755,root,root) %{_libdir}/libkmobiletools_gammu.so
+%{_datadir}/services/gammu_engine.desktop
+%endif
+
 %if %{with obexftp}
 %{_libdir}/kde3/kio_mobile.la
 %attr(755,root,root) %{_libdir}/kde3/kio_mobile.so
