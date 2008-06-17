@@ -30,6 +30,7 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
 %{?with_obexftp:BuildRequires:	obexftp-devel}
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
