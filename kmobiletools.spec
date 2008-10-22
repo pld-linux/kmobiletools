@@ -27,6 +27,7 @@ BuildRequires:	automake
 %{?with_gammu:BuildRequires:	gammu-devel >= 1.10.5}
 %{?with_gammu:BuildRequires:	gammu-devel < 1:1.12.0}
 %{?with_kdebluetooth:BuildRequires:	kdebluetooth-devel}
+BuildRequires:	libuuid-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	kdepim-devel
 %{?with_obexftp:BuildRequires:	obexftp-devel}
