@@ -62,10 +62,10 @@ Pliki nagłówkowe do kmobiletools.
 
 %prep
 %setup -q -n %{name}-%{version}-%{subver}
-%patch0 -p0
-%patch1 -p1
-%patch2 -p0
-%patch3 -p1
+%patch -P0 -p0
+%patch -P1 -p1
+%patch -P2 -p0
+%patch -P3 -p1
 
 %build
 %{__make} -f admin/Makefile.common cvs
